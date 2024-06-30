@@ -110,9 +110,8 @@ if os.path.exists(file_path):
         st.metric(label="Total Stock On Hand", value=f"{total_stock_on_hand:,}")
 
         # 1. Most profitable store
-        profitable_store = df.groupby(Store_Name)[Profit].sum().idxmax()
+        profitable_store = df.groupby("Store_Name")["Profit"].sum().idxmax()
         st.write(f"The most profitable store is: {profitable_store}")
-
 
         # Graphical representation of profit by store
         fig1 = px.bar(df.groupby("Store_Name")["Profit"].sum().reset_index(), x="Store_Name", y="Profit", title="Profit by Store")
