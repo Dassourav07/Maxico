@@ -129,7 +129,7 @@ if os.path.exists(file_path):
 
 
 
-    with col2
+    with col2:
         # 3. Most in-demand product (by name)
         most_demand_product_name = df.groupby("Product_Name")["Units"].sum().idxmax()
         st.write(f"The most in-demand product is: {most_demand_product_name}")
