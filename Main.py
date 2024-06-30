@@ -157,13 +157,14 @@ if os.path.exists(file_path):
 
 
     # Additional visualizations (example)
-    if 'Store_City' in df.columns
+    if 'Store_City' in df.columns:
         fig = px.histogram(df, x='Store_City', y='Revenue', title='Revenue by Store City')
         st.plotly_chart(fig)
 
     # Display the filtered DataFrame at the bottom of the page
-    st.subheader(Filtered Sales Data)
+    st.subheader("Filtered Sales Data")
     st.dataframe(df)
 
-else
-    st.error(fFile '{file_path}' not found. Please ensure the file is in the correct directory.)
+else:
+    st.error(f"File '{file_path}' not found. Please ensure the file is in the correct directory.")
+
