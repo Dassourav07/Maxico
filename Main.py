@@ -115,42 +115,46 @@ if os.path.exists(file_path):
 
 
         # Graphical representation of profit by store
-        fig1 = px.bar(df.groupby(Store_Name)[Profit].sum().reset_index(), x=Store_Name, y=Profit, title=Profit by Store)
+        fig1 = px.bar(df.groupby("Store_Name")["Profit"].sum().reset_index(), x="Store_Name", y="Profit", title="Profit by Store")
         st.plotly_chart(fig1)
 
         # 2. Top 5 most profitable products
-        top_5_profitable_products = df.groupby(Product_Name)[Profit].sum().nlargest(5)
-        st.write(Top 5 most profitable products)
+        top_5_profitable_products = df.groupby("Product_Name")["Profit"].sum().nlargest(5)
+        st.write("Top 5 most profitable products:")
         st.write(top_5_profitable_products)
 
         # Graphical representation of top 5 most profitable products
-        fig2 = px.bar(top_5_profitable_products.reset_index(), x=Product_Name, y=Profit, title=Top 5 Most Profitable Products)
+        fig2 = px.bar(top_5_profitable_products.reset_index(), x="Product_Name", y="Profit", title="Top 5 Most Profitable Products")
         st.plotly_chart(fig2)
+
+
 
     with col2
         # 3. Most in-demand product (by name)
-        most_demand_product_name = df.groupby(Product_Name)[Units].sum().idxmax()
-        st.write(fThe most in-demand product is {most_demand_product_name})
+        most_demand_product_name = df.groupby("Product_Name")["Units"].sum().idxmax()
+        st.write(f"The most in-demand product is: {most_demand_product_name}")
 
         # Graphical representation of demand by product
-        fig3 = px.bar(df.groupby(Product_Name)[Units].sum().reset_index(), x=Product_Name, y=Units, title=Demand by Product)
+        fig3 = px.bar(df.groupby("Product_Name")["Units"].sum().reset_index(), x="Product_Name", y="Units", title="Demand by Product")
         st.plotly_chart(fig3)
 
+
         # 4. Store showing most potential for investment
-        most_potential_store = df.groupby(Store_Name)[Revenue].sum().idxmax()
-        st.write(fThe store showing the most potential for investment is {most_potential_store})
+        most_potential_store = df.groupby("Store_Name")["Revenue"].sum().idxmax()
+        st.write(f"The store showing the most potential for investment is: {most_potential_store}")
 
         # Graphical representation of revenue by store
-        fig4 = px.bar(df.groupby(Store_Name)[Revenue].sum().reset_index(), x=Store_Name, y=Revenue, title=Revenue by Store)
+        fig4 = px.bar(df.groupby("Store_Name")["Revenue"].sum().reset_index(), x="Store_Name", y="Revenue", title="Revenue by Store")
         st.plotly_chart(fig4)
 
         # 5. Product showing least promise and should be discontinued
-        least_promise_product_name = df.groupby(Product_Name)[Profit].sum().idxmin()
-        st.write(fThe product showing the least promise and should be discontinued is {least_promise_product_name})
+        least_promise_product_name = df.groupby("Product_Name")["Profit"].sum().idxmin()
+        st.write(f"The product showing the least promise and should be discontinued is: {least_promise_product_name}")
 
         # Graphical representation of least profitable products
-        fig5 = px.bar(df.groupby(Product_Name)[Profit].sum().nsmallest(5).reset_index(), x=Product_Name, y=Profit, title=Least Profitable Products)
+        fig5 = px.bar(df.groupby("Product_Name")["Profit"].sum().nsmallest(5).reset_index(), x="Product_Name", y="Profit", title="Least Profitable Products")
         st.plotly_chart(fig5)
+
 
     # Additional visualizations (example)
     if 'Store_City' in df.columns
