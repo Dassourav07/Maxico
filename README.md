@@ -4,6 +4,8 @@
 
 ![Screenshot 2024-07-01 140011](https://github.com/Dassourav07/Maxico/assets/94233240/42aacd68-9a0f-4ea8-994c-3be8fc1f0043)
 
+![Screenshot 2024-07-01 142122](https://github.com/Dassourav07/Maxico/assets/94233240/0e33e4a9-35db-4f26-8d77-d62b9a93a00c)
+
 ![Screenshot 2024-07-01 140103](https://github.com/Dassourav07/Maxico/assets/94233240/e5fd2de7-f69c-48d5-bb4a-edf24be0bc2a)
 
 ![Screenshot 2024-07-01 140351](https://github.com/Dassourav07/Maxico/assets/94233240/dec1b0eb-3430-4868-b688-4e8e0a086978)
